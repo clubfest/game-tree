@@ -1,0 +1,17 @@
+
+<template name='navbar'>
+<div id='navbar'>
+  <a href="/"><i class='icon-home'></i> Home</a>
+  <a href="/ideas"><i class='icon-film'></i> Ideas</a>
+
+  {{#if currentUser}}
+    <a href="/profile">
+      <i class='icon-briefcase'></i> Profile
+    </a>
+  {{else}}
+    {{loginButtons}}
+  {{/if}}
+
+</div>
+  
+</template>

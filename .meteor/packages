@@ -9,3 +9,8 @@ insecure
 preserve-inputs
 bootstrap
 router
+font-awesome
+x-editable-bootstrap
+accounts-facebook
+accounts-ui
+user-status

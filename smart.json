@@ -1,5 +1,8 @@
 {
   "packages": {
-    "router": {}
+    "router": {},
+    "font-awesome": {},
+    "x-editable-bootstrap": {},
+    "user-status": {}
   }
 }

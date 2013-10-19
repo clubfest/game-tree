@@ -1,0 +1,63 @@
+.inline-blocks > *{
+  display: inline-block;
+  vertical-align: top;
+}
+.quantity-blocks > * {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px;
+}
+.quantity-desc{
+  width: 100px;
+}
+
+.game-board tr td, .color-options tr td {
+  cursor: pointer;
+  width: 5px;
+  height: 20px;
+  border-style: solid;
+  border-width: 2px;
+}
+.game-board tr td {
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  border-radius: 50%;
+}
+
+.game-board tr{
+  border-style: solid;
+}
+
+[data-color-id='1'] {
+  background: #B73;
+}
+
+[data-color-id='2'] {
+  background: #37B;
+}
+
+/*Color picker*/
+.color-options tr td {
+  border-width: 3px;
+}
+.color-options tr td:not([data-selected]) {
+  border: dashed;
+  border-width: 1px;
+
+}
+[data-selected='true'] {
+  opacity: 1;
+}
+
+.big-btns button {
+  width: 35px;
+  height: 30px;
+}
+
+#left-btns button {
+  width: 30px;
+  height: 30px;
+}
+

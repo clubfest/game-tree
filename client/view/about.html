@@ -1,6 +1,6 @@
 <template name="about">
   <h2 align="center">About</h2>
-  <p>I want to build a game platform that allows people to look back and analyze their thought process. To keep it simple, we will focus on games that can be played on a checkerboard.</p>
+  <p>I want to build a game platform that allows people to look back and analyze their thought process. To keep it simple, let's play on a checkerboard.</p>
   <div align='center'>
     <a class='btn btn-primary' id='new-game-btn'>Start a New Game</a>
   </div>
@@ -10,13 +10,17 @@
     <thead>
       <td>Creator</td>
       <td>Game</td>
+      <td>people</td>
       <!-- <td># people</td> -->
     </thead>
-    {{#each activeGames}}
+    {{#each unlockedGames}}
         <tr>
           <td>{{creatorName}}</td>
           <td>
-            <a href="/game/{{gameId}}">{{name}}</a>
+            <a href="/game/{{_id}}">{{title}}</a>
+          </td>
+          <td>
+            {{length activePlayers}}
           </td>
         </tr>
     {{/each}}

@@ -1,0 +1,164 @@
+
+<template name='game'>
+  <div align='center'>
+    {{#with currentGame}}
+      <h2 id='game-title' class="editable" data-type="text" data-emptytext="Game Title">
+        {{title}}
+      </h2>
+    {{/with}}
+    <div class='inline-blocks'>
+      <div id='left-btns'>
+        <!-- <div>
+          <button id='home-btn'>
+            <i class='icon-home'></i>
+          </button>
+        </div> -->
+        <!-- <div>
+          <button id='delete-state-btn'>
+            <i class='icon-remove'></i>
+          </button>
+        </div> -->
+
+        <!-- <div>
+          {{#if locked}}
+            <button id='unlock-btn'>
+              <i class='icon-unlock'></i>
+            </button> 
+          {{else}}
+            <button id='lock-btn'>
+              <i class='icon-lock'></i>
+            </button> 
+          {{/if}}
+        </div> -->
+        <!-- <div>
+          <button>
+            <i class='icon-unlink'></i>
+          </button>
+        </div> -->
+        <!-- 
+        <div>
+          <button id='add-text-btn'>
+            <i class='icon-font'></i>
+          </button>           
+        </div> -->
+        <!-- <div>
+          <button id='more-options-btn'>
+            <i class='icon-chevron-down'></i>
+          </button>           
+        </div> -->
+      </div>
+      {{#gameBoard width=width height=height}} {{/gameBoard}}
+      <div>
+        <table class='color-options'>
+          <tr>
+            <td data-color-id='1'></td>
+          </tr>
+          <tr>
+            <td data-color-id='2'></td>
+          </tr>         
+          <tr>
+            <td data-color-id='0'>
+            </td>
+          </tr>
+        </table>
+        <div>
+          <button id='more-options-btn'>
+            <i class='icon-chevron-down'></i>
+          </button>           
+        </div>
+        <!-- <div>
+          <button><i class='icon-chevron-down'></i></button>
+        </div> -->
+      </div>
+        
+    </div>
+    <br/>
+    <div id='bottom-btns'>
+      <div class="inline-blocks">
+        <!-- <button>
+          <i class='icon-minus'></i>          
+        </button>
+        rows
+        <button>
+          <i class='icon-plus'></i>
+        </button>
+      </div>
+      <button>
+          <i class='icon-minus'></i>          
+        </button>
+        columns
+        <button>
+          <i class='icon-plus'></i>
+        </button>
+      </div> -->
+      <div class='big-btns inline-blocks'>
+        {{#if hasSibling}}
+          <div>
+            <button id='prev-sibling-btn' {{#unless hasPrevSibling}}disabled{{/unless}}>
+              <i class='icon-code-fork icon-flip-horizontal'></i>
+            </button>           
+          </div>
+        {{/if}}
+        <div>
+          <button id='backward-btn' {{#if noBackward}}disabled{{/if}}><i class='icon-backward'></i></button>
+        </div>
+        <!-- <div id='record-control'>
+          {{#if isRecording}}
+            <button>
+              <span class="icon-stack">
+                <i class="icon-camera"></i>
+                <i class="icon-ban-circle icon-stack-base text-error"></i>
+              </span>
+            </button>
+          {{else}}
+            <button><i class='icon-camera'></i></button>
+          {{/if}}
+        </div> -->
+        <div>
+          <button id='forward-btn' {{#if noForward}}disabled{{/if}}><i class='icon-forward'></i></button>
+        </div>
+        {{#if hasSibling}}
+          <div>
+            <button id='next-sibling-btn' {{#unless hasNextSibling}}disabled{{/unless}}>
+              <i class='icon-code-fork'></i>
+            </button>           
+          </div>
+        {{/if}}
+      </div>        
+    </div>
+  </div>
+  <br/>
+  {{#with currentState}}
+    <div id='game-content' class='editable' data-type='text' data-emptytext='Description'>
+      {{content}}
+    </div>
+  {{/with}}
+  {{#with currentGame}}
+    {{#if adjustable}}
+      <div class='big-btns quantity-blocks'>
+        <div>
+          <button id='height-decrease'><i class='icon-minus'></i></button>
+        </div>
+        <div class='quantity-desc'>
+          <!-- <i class='icon-resize-vertical'></i>  -->
+          Height {{height}}
+        </div>
+        <div>
+          <button id='height-increase'><i class='icon-plus'></i></button>
+        </div>
+      </div>
+      <div class='big-btns quantity-blocks'>
+        <div>
+          <button id='width-decrease'><i class='icon-minus'></i></button>
+        </div>
+        <div class='quantity-desc'>
+          <!-- <i class='icon-resize-horizontal'></i> -->
+          Width {{width}}
+        </div>
+        <div>
+          <button id='width-increase'><i class='icon-plus'></i></button>
+        </div>
+      </div>
+    {{/if}}
+  {{/with}}
+</template>

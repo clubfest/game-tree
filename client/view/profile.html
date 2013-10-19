@@ -1,0 +1,39 @@
+
+<template name='profile'>
+  <div align='right'>
+    {{#if currentUser}}
+      {{loginButtons}}
+    {{/if}}  
+  </div>
+  <table>
+    <thead>
+      <td>Game</td>
+      <td>Date</td>
+      <!-- <td># people</td> -->
+      <td>Share</td>
+    </thead>
+    {{#each games}}
+        <tr>
+          <td>
+            <a href="/game/{{_id}}">{{title}}</a>
+          </td>
+          <td>{{dateAbbrev createdAt}}</td>
+          <!-- <td><a class='delete-game-btn' data-game-id='{{_id}}'><i class='icon-remove'></i> Delete</a></td> -->
+          <td align='center'>
+            {{#if shared}}
+              <a class='unshare-game-btn' data-game-id='{{_id}}'>
+                <i class='icon-remove'></i>
+              </a>
+            {{else}}
+              <a class='share-game-btn' data-game-id='{{_id}}'>
+                <i class='icon-film'></i>
+              </a>
+            {{/if}}
+          </td>
+
+        </tr>
+    {{/each}}
+  </table>
+    
+  
+</template>

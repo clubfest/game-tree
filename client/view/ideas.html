@@ -1,0 +1,17 @@
+
+<template name='ideas'>
+<table align='center'>
+  <thead>
+    <td>Creator</td>
+    <td>Game</td>
+  </thead>
+  {{#each publishedGames}}
+    <tr>
+      <td>{{creatorName}}</td>
+      <td>
+        <a href="/game/{{_id}}">{{title}}</a>
+      </td>
+    </tr>
+  {{/each}}
+</table>
+</template>

@@ -7,7 +7,7 @@ body {
   max-width: 650px;
   width: 95%;
   margin: 0 auto;
-  padding: 50px;
+  padding: 10px 50px;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   min-height: 600px;
 }
@@ -29,4 +29,18 @@ td{
 
 thead{
   border-bottom: 1px solid black;
+}
+
+#navbar {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #55B;
+}
+#navbar a{
+  margin-left: 10px;
+  color: #55B; 
+}
+
+a {
+  cursor: pointer;
 }
