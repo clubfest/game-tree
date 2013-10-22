@@ -5,7 +5,7 @@ States = new Meteor.Collection('states');
 
 Games.find({locked: false}).observeChanges({
   changed: function(id, game){
-    if (game && game.activePlayers.length===0){
+    if (game.activePayers && game.activePlayers.length===0){
       Games.update(id, {$set:{locked: true}})
     }
   }
@@ -13,7 +13,7 @@ Games.find({locked: false}).observeChanges({
 
 Games.find({locked: true}).observeChanges({
   changed: function(id, game){
-    if (game && game.activePlayers.length>0){
+    if (game.activePayers && game.activePlayers.length>0){
       Games.update(id, {$set:{locked: false}})
     }
   }
