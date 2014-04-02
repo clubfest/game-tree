@@ -2,6 +2,32 @@
 <template name='game'>
   <div align='center'>
     {{#with currentGame}}
+    {{#if adjustable}}
+      <div class='big-btns quantity-blocks'>
+        <div>
+          <button id='height-decrease'><i class='icon-minus'></i></button>
+        </div>
+        <div class='quantity-desc'>
+          <!-- <i class='icon-resize-vertical'></i>  -->
+          Height {{height}}
+        </div>
+        <div>
+          <button id='height-increase'><i class='icon-plus'></i></button>
+        </div>
+      </div>
+      <div class='big-btns quantity-blocks'>
+        <div>
+          <button id='width-decrease'><i class='icon-minus'></i></button>
+        </div>
+        <div class='quantity-desc'>
+          <!-- <i class='icon-resize-horizontal'></i> -->
+          Width {{width}}
+        </div>
+        <div>
+          <button id='width-increase'><i class='icon-plus'></i></button>
+        </div>
+      </div>
+    {{/if}}
       <h2 id='game-title' class="editable" data-type="text" data-emptytext="Game Title">
         {{title}}
       </h2>
@@ -55,7 +81,10 @@
           </tr>
           <tr>
             <td data-color-id='2'></td>
-          </tr>         
+          </tr> 
+          <tr>
+            <td data-color-id='3'></td>
+          </tr>        
           <tr>
             <td data-color-id='0'>
             </td>
@@ -129,36 +158,8 @@
   </div>
   <br/>
   {{#with currentState}}
-    <div id='game-content' class='editable' data-type='text' data-emptytext='Description'>
+    <div id='game-content' class='editable' data-type='textarea' data-emptytext='Description'>
       {{content}}
     </div>
-  {{/with}}
-  {{#with currentGame}}
-    {{#if adjustable}}
-      <div class='big-btns quantity-blocks'>
-        <div>
-          <button id='height-decrease'><i class='icon-minus'></i></button>
-        </div>
-        <div class='quantity-desc'>
-          <!-- <i class='icon-resize-vertical'></i>  -->
-          Height {{height}}
-        </div>
-        <div>
-          <button id='height-increase'><i class='icon-plus'></i></button>
-        </div>
-      </div>
-      <div class='big-btns quantity-blocks'>
-        <div>
-          <button id='width-decrease'><i class='icon-minus'></i></button>
-        </div>
-        <div class='quantity-desc'>
-          <!-- <i class='icon-resize-horizontal'></i> -->
-          Width {{width}}
-        </div>
-        <div>
-          <button id='width-increase'><i class='icon-plus'></i></button>
-        </div>
-      </div>
-    {{/if}}
   {{/with}}
 </template>

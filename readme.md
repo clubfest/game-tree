@@ -1,6 +1,8 @@
 ## About
 
-I want to have multiple people explore the game tree
+Check out the [demo here](http://play.against.meteor.com)
+
+I want to have multiple people explore a game tree
 * joining means all players see the same state
 
 ## Game

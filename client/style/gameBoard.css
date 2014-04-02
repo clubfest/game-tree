@@ -38,6 +38,10 @@
   background: #37B;
 }
 
+[data-color-id='3'] {
+  background: #555;
+}
+
 /*Color picker*/
 .color-options tr td {
   border-width: 3px;

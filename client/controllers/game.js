@@ -34,7 +34,8 @@ Template.game.rendered = function(){
   $.fn.editable.defaults.mode = 'inline';
   $('#game-title.editable:not(.editable-click)').editable('destroy').editable({
     success: function(response, newValue) {
-      Meteor.call('updateTitle', Session.get('stateId'), newValue, function(err){
+      console.log(newValue)
+      Meteor.call('updateTitle', Session.get('gameId'), newValue, function(err){
         if (err) alert(err.reason);
       });
     }

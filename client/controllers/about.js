@@ -1,9 +1,15 @@
 
 Template.about.unlockedGames = function(){
-  return Games.find({
+  var games =Games.find({
     locked: false,
     // activePlayers: {$size: {$ne:0}},
-  });
+  }).fetch();
+  var activeGames = []
+  _.each(games, function(game){
+    if (game && game.activePlayers && game.activePlayers.length > 0) 
+      activeGames.push(game);
+  })
+  return activeGames
 }
 
 
